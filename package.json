@@ -1,0 +1,19 @@
+{
+  "name": "github-usercard",
+  "version": "1.0.0",
+  
+  "scripts": {
+    "start": "parcel index.html"
+  },
+  
+  
+  
+  "license": "ISC",
+  "homepage": "https://github.com/ohman4/github-usercard#readme",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4"
+  },
+  "dependencies": {
+    "axios": "^0.19.2"
+  }
+}
