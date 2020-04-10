@@ -126,15 +126,13 @@ axios.get('https://api.github.com/users/ohman4')
 
     axios.get("https://api.github.com/users/ohman4/followers")
     .then(res => { 
-        console.log(res);
         res.data.forEach(person => {
-        
         const followerurl = person.url;
+        
         axios.get(followerurl)
         .then(res =>{
           const nickFollowerCard = userCardMaker(res.data);
           document.querySelector('.cards').appendChild(nickFollowerCard)
-        })
-        
+          })
         })
       })
