@@ -1,4 +1,7 @@
 
+ // const followersArray = ['https://api.github.com/users/toendthepeace', 'https://api.github.com/users/shayne-smith/', 'https://api.github.com/users/Istott ', 'https://api.github.com/users/bigknell', 'https://api.github.com/users/dustinmyers'];
+
+
 
 /* Step 1: using axios, send a GET request to the following URL 
            (replacing the palceholder with your Github name):
@@ -119,4 +122,19 @@ axios.get('https://api.github.com/users/ohman4')
       console.log(err, 'error')
     })
 
-    const followersArray = [];
+   
+
+    axios.get("https://api.github.com/users/ohman4/followers")
+    .then(res => { 
+        console.log(res);
+        res.data.forEach(person => {
+        
+        const followerurl = person.url;
+        axios.get(followerurl)
+        .then(res =>{
+          const nickFollowerCard = userCardMaker(res.data);
+          document.querySelector('.cards').appendChild(nickFollowerCard)
+        })
+        
+        })
+      })
